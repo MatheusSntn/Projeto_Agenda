@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+  <h1>Contact</h1>
+  <div class="form-wrapper">
+
+    <h2>Register</h2>
+
+    {% include 'contact/partials/_user-form.html' %}
+
+    {% if user.is_authenticated %}
+    <p>
+      Voce fez login como {{ user.username }}
+      Clique <a href="{% url 'contact:logout' %}">aqui</a> para sair
+    </p>
+  {% endif %}
+
+      <div class="form-content">
+        <div class="form-group">
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+{% endblock content %}
